@@ -1,3 +1,5 @@
-*/opensearch.log
-*/connection.json
+**/snippetsearch.log
+**/connection.json
 **.vscode
+**/__pycache__
+**.zip
