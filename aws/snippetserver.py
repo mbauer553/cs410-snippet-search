@@ -19,13 +19,12 @@ def add_snippet():
     try:
         request_body = request.get_json()
         snippet = request_body.get('snippet', '')
+        lang = request_body.get('lang', '')
     except json.JSONDecodeError:
         return jsonify({'statusCode': 400, 'body': 'Invalid JSON format in the request body'})
 
     if snippet:
-        # Perform your processing here
-        # ...
-        ss.addSnippet(snippet)
+        ss.addSnippet(snippet, lang=lang)
 
         return jsonify({'statusCode': 200, 'body': True})
     else:

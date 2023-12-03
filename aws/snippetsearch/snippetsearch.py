@@ -69,7 +69,7 @@ def getClientEc2():
 def getClient():
     my_user = os.environ.get("USER")
     if "ec2" in my_user:
-        return getClientEc2()
+        return getClientLocal() # TODO Eventually have Ec2 pull from boto3
     else:
         return getClientLocal()
 # endregion
@@ -112,7 +112,7 @@ class SnippetSearch:
     def addSnippet(self, codeSnippet, lang="javascript"):
         response = self.client.index(
             index = self.index,
-            body = self.snippetToDoc(codeSnippet, lang=lang),
+            body = self.snippetToDoc(codeSnippet, lang=lang if lang else "javascript"),
             refresh = True
         )
         logging.info(response)
