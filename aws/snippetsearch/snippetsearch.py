@@ -44,7 +44,7 @@ def getClientLocal():
         ssl_show_warn = False
     )
 
-def getClientLambda():
+def getClientEc2():
     # # TODO use boto3 instead of password in env vars
     # import boto3
     # from requests_aws4auth import AWS4Auth
@@ -67,9 +67,9 @@ def getClientLambda():
     )
 
 def getClient():
-    lambda_function_name = os.getenv('AWS_LAMBDA_FUNCTION_NAME')
-    if lambda_function_name:
-        return getClientLambda()
+    my_user = os.environ.get("USER")
+    if "ec2" in my_user:
+        return getClientEc2()
     else:
         return getClientLocal()
 # endregion
@@ -132,9 +132,9 @@ class SnippetSearch:
         logging.info(msg)
         return success, failed
     
-    def findSnippets(self, query="", language="javascript"):
+    def findSnippets(self, query="", lang="javascript"):
         # Search for the document.
-        queryTok = self.tokenize(query, lang=language)
+        queryTok = self.tokenize(query, lang=lang)
         response = self.client.search(
             body = {
                 'size': 5,
@@ -157,7 +157,7 @@ class SnippetSearch:
                         'filter': [
                             {
                                 'term': {
-                                    'language': language
+                                    'language': lang
                                 }
                             }
                         ]
