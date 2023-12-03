@@ -30,7 +30,6 @@ def getConnectionDetails():
     return connection
 
 def getClientLocal():
-    lambda_function_name = os.getenv('AWS_LAMBDA_FUNCTION_NAME')
     con = getConnectionDetails()
     # Create the client with SSL/TLS enabled, but hostname verification disabled.
     return OpenSearch(
@@ -46,24 +45,25 @@ def getClientLocal():
     )
 
 def getClientLambda():
-    import boto3
-    from requests_aws4auth import AWS4Auth
-    my_region = os.environ['AWS_REGION']
-    service = 'es' 
-    credentials = boto3.Session().get_credentials()
-    awsauth = AWS4Auth(credentials.access_key, credentials.secret_key, my_region, service, session_token=credentials.token)
+    # # TODO use boto3 instead of password in env vars
+    # import boto3
+    # from requests_aws4auth import AWS4Auth
+    # my_region = os.environ['AWS_REGION']
+    # service = 'es' 
+    # credentials = boto3.Session().get_credentials()
+    # awsauth = AWS4Auth(credentials.access_key, credentials.secret_key, my_region, service, session_token=credentials.token)
+    http_auth =  ('admin', os.getenv('OPENSEARCH_PASS'))
 
     return  OpenSearch(
         hosts=[{
             'host': os.getenv('OPENSEARCH_HOST'),
             'port': os.getenv('OPENSEARCH_PORT') or 443
         }],
-        http_auth = awsauth,
+        http_auth =  http_auth,
+        http_compress = True,
         use_ssl = True,
-        verify_certs = True,
         ssl_assert_hostname = False,
         ssl_show_warn = False,
-        connection_class=RequestsHttpConnection
     )
 
 def getClient():
@@ -84,6 +84,7 @@ class SnippetSearch:
         return hash(data) % (10**8)
 
     def tokenize(self, code, lang="javascript") -> str:
+        # return code
         return " ".join([str(t) for t in ctok.tokenize(code,lang=lang,syntax_error="ignore")])
 
     def ensureIndex(self):
