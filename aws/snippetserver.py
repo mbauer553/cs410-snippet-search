@@ -45,4 +45,4 @@ def find_snippet():
         return jsonify({'statusCode': 400, 'body': 'Snippet parameter is required for /findsnippet'})
 
 if __name__ == '__main__':
-    app.run(debug=True)  # Run the Flask app locally in debug mode
+    app.run(debug=True, host='0.0.0.0', port=8080)  # Run the Flask app locally in debug mode
