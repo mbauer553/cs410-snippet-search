@@ -1,0 +1,6 @@
+**/snippetsearch.log
+**/connection.json
+**.vscode
+**/__pycache__
+**.zip
+**/lambda_layer
