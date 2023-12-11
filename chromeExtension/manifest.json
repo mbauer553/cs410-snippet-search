@@ -1,0 +1,16 @@
+{
+    "manifest_version": 3,
+    "name": "Snippet Search",
+    "description": "Search Code Snippets",
+    "version": "1.0.0",
+    "action": {
+        "default_popup": "snippetsearch.html",
+        "default_icon": "scissors.png"
+    },
+    "permissions": [
+        "activeTab"
+    ],
+    "host_permissions": [
+        "http://<HOSTNAME>/*"
+    ]
+}
