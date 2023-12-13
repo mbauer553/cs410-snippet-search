@@ -4,12 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snippet Search</title>
+    <style>
+      .popup-container {
+        width: 400px; 
+      }
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+
+      .copy-button {
+        background-color: #0073e6;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .searchtext {
+        width: 200px;
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <input id="searchtext">
-      <button id="searchbutton">Search</button>
+    <div class="popup-container">
+      <a class="tab" id="searchTab" href="#search-container">Search Snippet</a>
+      <a class="tab" id="saveTab" href="#save-container">Save Snippet</a>
     </div>
+    <div id="search-container">
+      <input id="searchtext" placeholder="Enter your search...">
+      <button id="searchbutton">Search</button>
+      <ul id="stringList"></ul>
+    </div>
+    <div id="save-container">
+      <!-- Content for the "Save Snippet" tab -->
+      <div>
+          <input id="savetext" placeholder="Enter your snippet...">
+          <button id="savebutton">Save</button>
+      </div>
+  </div>
   </body>
   <script src="snippetsearch.js"></script>
 </html>
