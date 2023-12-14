@@ -21,7 +21,7 @@ saveTab.addEventListener("click", function () {
   searchTabContent.style.display = "none";
 });
 
-const baseURL = 'http://http://ec2-23-20-145-210.compute-1.amazonaws.com:8080/'
+const baseURL = 'http://<HOSTNAME>:<PORT>/'
 
 /*****************************************************/
 /*         Handle Search Logic                       */
