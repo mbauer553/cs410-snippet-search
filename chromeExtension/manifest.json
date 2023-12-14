@@ -10,6 +10,9 @@
     "permissions": [
         "activeTab"
     ],
+    "background": {
+        "persistent": true
+    },
     "host_permissions": [
         "http://<HOSTNAME>/*"
     ]

@@ -25,7 +25,7 @@ saveTab.addEventListener("click", function () {
 /*         Handle Search Logic                       */
 let searchButton = document.getElementById('searchbutton');
 let searchInput =  document.getElementById('searchtext');
-const findURL = 'http://ec2-23-20-145-210.compute-1.amazonaws.com:8080/findsnippet?lang=javascript&snippet='
+const findURL = 'http://<HOSTNAME>:8080/findsnippet?lang=javascript&snippet='
 searchButton.addEventListener(
     "click",
     function() {
