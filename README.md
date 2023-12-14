@@ -1,6 +1,6 @@
 # cs410-snippet-search
 
-## [Functionality](README.md)
+## [Functionality](aws/README.md)
 
 ## [Project Proposal](docs/proposal.md)
 
