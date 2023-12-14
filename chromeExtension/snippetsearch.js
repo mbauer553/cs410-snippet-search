@@ -21,11 +21,13 @@ saveTab.addEventListener("click", function () {
   searchTabContent.style.display = "none";
 });
 
+const baseURL = 'http://http://ec2-23-20-145-210.compute-1.amazonaws.com:8080/'
+
 /*****************************************************/
 /*         Handle Search Logic                       */
 let searchButton = document.getElementById('searchbutton');
 let searchInput =  document.getElementById('searchtext');
-const findURL = 'http://<HOSTNAME>:8080/findsnippet?lang=javascript&snippet='
+const findURL = baseURL + 'findsnippet?lang=javascript&snippet='
 searchButton.addEventListener(
     "click",
     function() {
@@ -69,7 +71,7 @@ searchButton.addEventListener(
 
 let saveButton = document.getElementById('savebutton');
 let saveInput =  document.getElementById('savetext');
-const saveURL = 'http://<HOSTNAME>:8080/addsnippet'
+const saveURL = baseURL + 'addsnippet'
 saveButton.addEventListener(
     "click",
     function() {
