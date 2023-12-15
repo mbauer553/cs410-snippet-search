@@ -1,6 +1,6 @@
 # cs410-snippet-search
 
-## [Use Case](usecase.md)
+## [Use Case](docs/usecase.md)
 
 ## [Functionality](aws/README.md)
 
