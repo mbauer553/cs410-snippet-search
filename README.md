@@ -1,6 +1,12 @@
 # cs410-snippet-search
 
+## [Use Case](usecase.md)
+
 ## [Functionality](aws/README.md)
+
+## [Contributions](docs/README.md)
+
+### Miscellanous
 
 ## [Project Proposal](docs/proposal.md)
 

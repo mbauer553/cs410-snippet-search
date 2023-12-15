@@ -1,19 +1,22 @@
-### Team Roster
+### Contributions
 * Mark Bauer - markab5@illinois.edu
   * Team Captain Responsibilities
-  * Chrome Extension
+  * Set up Chrome Extension
+    * Search Functionality 
   * Documentation
   * Saving/Querying Snippets
 * Cameron Keenan - keenan5@illinois.edu
-  * Setting up AWS EC2 Instance
-  * Documentaton
+  * Setting up and Deploying AWS EC2 Instance
+  * Added functionality to create index and query/save snippets
+  * Documentation
   * Saving/Querying Snippets
 * Ben Carman - bac8@illinois.edu
-  * Chrome Extension
+  * Chrome Extension Work
+    * Save Snippets
   * Documentation
   * Saving/Querying Snippets
 * Armaan Kohli - kohli9@illinois.edu
-  * Chrome Extension
+  * Cleaned up Chrome Extension
   * Documentation
   * Saving/Querying Snippets
   * Presentation
