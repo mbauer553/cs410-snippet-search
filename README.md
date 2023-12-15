@@ -4,7 +4,7 @@
 
 ## [Functionality](aws/README.md)
 
-## [Contributions](docs/README.md)
+## [Contributions](docs/contributions.md)
 
 ### Miscellanous
 
